@@ -8,7 +8,7 @@ const userRoutes=require('./routes/user.routes.js')
 config({
     path:'.env'
 })
-
+const port=process.env.PORT
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
@@ -22,5 +22,8 @@ app.use("/api/v1/",userRoutes);
 
 app.listen(process.env.PORT_NO,()=>{
     console.log(`Server started at PORT ${process.env.PORT_NO}`);
+})
+app.get("/",()=>{
+    console.log("Welcome");
 })
 
