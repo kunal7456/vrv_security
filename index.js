@@ -20,10 +20,11 @@ connectDB();
 
 app.use("/api/v1/",userRoutes);
 
-app.listen(process.env.PORT_NO,()=>{
-    console.log(`Server started at PORT ${process.env.PORT_NO}`);
-})
 app.get("/",()=>{
     console.log("Welcome");
 })
 
+
+app.listen(process.env.PORT_NO,()=>{
+    console.log(`Server started at PORT ${process.env.PORT_NO}`);
+})
